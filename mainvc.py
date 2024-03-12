@@ -5,7 +5,7 @@ import requests
 import requests,hashlib
 #owner=836970770
 owner=7037898496
-token='6550384531:AAFoPmjpJKHIUYcSH9P6ycKa7mSq2UikR_U'
+token='7051098322:AAGdjka-I3QPq1kwuidOCHsiCkdkVtsolKk'
 bot = telebot.TeleBot(token)
 
 numbers = []
