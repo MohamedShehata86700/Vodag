@@ -131,6 +131,7 @@ def sum_numbers(message):
             
 
         res=requests.post(url, headers=headers, data=data)
+        print(res.text)
 
         if "user credentials" in res.text:
 
