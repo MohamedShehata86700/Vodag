@@ -13,7 +13,7 @@ owner=836970770
 id1="-1001704325012"
 
 
-
+s=requests.session()
 number="01091565831"
 #print("$"*10)
 password="Mm86700@@"
@@ -45,7 +45,7 @@ data={
 
 "client_id":"my-vodafone-app"
 }
-res=requests.post(url, headers=headers, data=data)
+res=s.post(url, headers=headers, data=data)
 jwt=res.json()["access_token"]
 
 printed_values = []
@@ -74,7 +74,7 @@ def cart():
 						
 						
 						
-	r =requests.get(ul, headers=hd).json()
+	r =s.get(ul, headers=hd).json()
 	for i in r:
 		try:
 		   patt=i['pattern']
