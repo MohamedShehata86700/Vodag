@@ -45,8 +45,10 @@ data={
 
 "client_id":"my-vodafone-app"
 }
-res=s.post(url, headers=headers, data=data)
-jwt=res.json()["access_token"]
+try:
+    res=s.post(url, headers=headers, data=data)
+    jwt=res.json()["access_token"]
+except:print("connect error")
 
 printed_values = []
 def cart():
