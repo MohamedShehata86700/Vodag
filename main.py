@@ -1,11 +1,5 @@
+
 import requests
-import time
-import asynci
-import requests
-import requests
-import random
-import time
-import webbrowser
 import telebot
 from telebot import types
 token= "6550384531:AAFoPmjpJKHIUYcSH9P6ycKa7mSq2UikR_U"
