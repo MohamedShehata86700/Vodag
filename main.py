@@ -12,44 +12,46 @@ bot = telebot.TeleBot(token)
 owner=836970770
 id1="-1001704325012"
 
-
-s=requests.session()
-number="01091565831"
-#print("$"*10)
-password="Mm86700@@"
-#print("$"*10)
-url="https://mobile.vodafone.com.eg/auth/realms/vf-realm/protocol/openid-connect/token"
-headers={
-"Accept":"application/json, text/plain, */*",
-"Connection":"keep-alive",
-"x-dynatrace":"MT_3_17_998679495_45-0_a556db1b-4506-43f3-854a-1d2527767923_0_18957_273",
-"x-agent-operatingsystem":"1630483957",
-"clientId":"AnaVodafoneAndroid",
-"x-agent-device":"RMX1911",
-"x-agent-version":"2021.12.2",
-"x-agent-build":"493",
-"Content-Type":"application/x-www-form-urlencoded",
-"Content-Length":"143",
-"Host":"mobile.vodafone.com.eg",
-"Accept-Encoding":"gzip",
-"User-Agent":"okhttp/4.9.1"
-}
-data={
-"username":number,
-
-"password":password,
-
-"grant_type":"password",
-
-"client_secret":"a2ec6fff-0b7f-4aa4-a733-96ceae5c84c3",
-
-"client_id":"my-vodafone-app"
-}
-try:
-    res=s.post(url, headers=headers, data=data)
-    jwt=res.json()["access_token"]
-except:print("connect error")
-
+def jjwt():
+	s=requests.session()
+	number="01091565831"
+	#print("$"*10)
+	password="Mm86700@@"
+	#print("$"*10)
+	url="https://mobile.vodafone.com.eg/auth/realms/vf-realm/protocol/openid-connect/token"
+	headers={
+	"Accept":"application/json, text/plain, */*",
+	"Connection":"keep-alive",
+	"x-dynatrace":"MT_3_17_998679495_45-0_a556db1b-4506-43f3-854a-1d2527767923_0_18957_273",
+	"x-agent-operatingsystem":"1630483957",
+	"clientId":"AnaVodafoneAndroid",
+	"x-agent-device":"RMX1911",
+	"x-agent-version":"2021.12.2",
+	"x-agent-build":"493",
+	"Content-Type":"application/x-www-form-urlencoded",
+	"Content-Length":"143",
+	"Host":"mobile.vodafone.com.eg",
+	"Accept-Encoding":"gzip",
+	"User-Agent":"okhttp/4.9.1"
+	}
+	data={
+	"username":number,
+	
+	"password":password,
+	
+	"grant_type":"password",
+	
+	"client_secret":"a2ec6fff-0b7f-4aa4-a733-96ceae5c84c3",
+	
+	"client_id":"my-vodafone-app"
+	}
+	try:
+	    res=s.post(url, headers=headers, data=data)
+	    jwt=res.json()["access_token"]
+	    return jwt
+	except:print("connect error")
+jj=jjwt()
+print(jj)	
 printed_values = []
 def cart():
 	ul=f"https://web.vodafone.com.eg/services/dxl/ramadanpromo/promotion?@type=RamadanHub&channel=website&msisdn={number}"
@@ -61,7 +63,7 @@ def cart():
 			  "msisdn": number,
 			  "api-host": "PromotionHost",
 			  "Accept-Language": "AR",
-			  "Authorization": "Bearer "+(jwt)+"",
+			  "Authorization": "Bearer "+(jj)+"",
 			  'Content-Type': 'application/json',
 			  'x-dtreferer': 'https://web.vodafone.com.eg/spa/portal/hub',
 			  'Accept': 'application/json',
