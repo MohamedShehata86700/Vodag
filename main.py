@@ -83,7 +83,7 @@ def cart():
 		   		ncharge=(ch[0]['value'])
 		   		vcharge=(ch[1]['value'])
 		   		cnum=(ch[3]['value'])
-		   		if float(vcharge) > 200:
+		   		if float(vcharge) > 20:
 		   			if vcharge not in printed_values:
 		   				printed_values.append(vcharge)	
 		   		
