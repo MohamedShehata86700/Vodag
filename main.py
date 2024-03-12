@@ -1,6 +1,6 @@
 import requests
 import time
-import asyncio
+import asynci
 import requests
 import requests
 import random
